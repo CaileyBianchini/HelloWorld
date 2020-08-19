@@ -241,18 +241,21 @@ namespace HelloWorld
                 silvercoins = silvercoins + 2;
                 coppercoins = coppercoins + 3;
 
-                Console.WriteLine("Congradulations! You gained 2 charisma, ")
+                Console.WriteLine("Congradulations! You gained 2 charisma, 3 karma, 1 gold coin, 2 silver coins, and 3 copper coins!");
             }
             else if (queston1 == '2')
             {
+                karma = karma - 1;
 
             }
             else
             {
 
             }
-            
-           
+
+            Console.WriteLine("Press [Enter] to continue.");
+            Console.ReadLine();
+            Console.Clear();
 
         }
     }

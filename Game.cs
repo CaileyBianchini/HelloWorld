@@ -59,13 +59,16 @@ namespace HelloWorld
             Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy was shared, 'Summon a Hero and the world shall be saved.' and thus a slimmer of hope was born!");
             Console.WriteLine("~~~~~~~~~~");
 
-            //
-            Console.WriteLine("You were brought to our world to save us Hero " + name + "!");
+            //start
+            Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elf. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
+            Console.WriteLine("'You were brought to our world to save us Hero " + name + "!'");
             Console.WriteLine("What type of Hero Class are you: ");
             string role = Console.ReadLine();
             Console.WriteLine("     ");
             Console.WriteLine("-Level Gained-");
             level = level+1;
+            Console.WriteLine("     ");
+            //telling the users stat
             Console.WriteLine("Current level: " + level);
             Console.WriteLine("Hero role: " + role);
             Console.WriteLine("Health: " + PlayerHealth);
@@ -73,7 +76,7 @@ namespace HelloWorld
             Console.WriteLine("Attack: " + playersattack);
             Console.WriteLine("Special Attack: " + specialattack);
             Console.WriteLine("Your goal is to reach the max level of " + maxlevel + " and defeat the Demon King with your new found powers! To save our world!");
-
+            
             
             
            

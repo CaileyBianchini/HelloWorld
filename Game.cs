@@ -18,14 +18,14 @@ namespace HelloWorld
             int bossattacks = 20;
             int specialbossattacks = 30; //minus 5 mana
 
-            int bossmana = 30
+            int bossmana = 30;
 
                 //big boss
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
 
-            int bigbossmana = 30
-
+            int bigbossmana = 30;
+                
             
             //character details
 
@@ -59,7 +59,7 @@ namespace HelloWorld
             level = level+1;
             Console.Write("Your current level: " + level);
             
-
+            
            
 
         }

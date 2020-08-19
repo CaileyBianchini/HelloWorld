@@ -51,11 +51,23 @@ namespace HelloWorld
             int luck = 5;
             float stealth = 2.0f;
 
+            //_________________________________________________________________________________________________
+                //pet
+            int petattack = 20;
+
+            //_________________________________________________________________________________________________
+            //Bag
+            int goldcoins = 10;
+            int silvercoins = 15;
+            int coppercoins = 20;
 
             //maxlevelreached = level == maxlevel;
 
-                //menu
+            //menu
             //bool ready = true;
+
+            //this is where the start well starts to make sure to loop
+            //back to here when the player dies and wants to continue.
 
             //start
             Console.WriteLine("What is your name?");
@@ -72,11 +84,7 @@ namespace HelloWorld
             Console.ReadLine();
             Console.Clear();
 
-
-            //this is where the start well starts to make sure to loop
-            //back to here when the player dies and wants to continue.
-
-            //start
+            //your begining
             Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elfand her eyes had galxies in them. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
             Console.WriteLine("'You were brought to our world to save us Hero " + name + "!'");
             Console.WriteLine("  ");
@@ -143,6 +151,14 @@ namespace HelloWorld
 
             //race
 
+                //soon to be added
+                    //orc
+                    //gnome
+                    //dragonborn
+                    //half orc
+                    //other halves
+                    //fae
+
             if (race == "human") 
             {
                 PlayerHealth = PlayerHealth - 20;
@@ -168,6 +184,7 @@ namespace HelloWorld
             if (race == "halfling")
             {
                 PlayerHealth = PlayerHealth / 2;
+                stealth = stealth + 6;
             }
 
 
@@ -183,14 +200,57 @@ namespace HelloWorld
             Console.WriteLine("Karma: " + karma);
             Console.WriteLine("Charisma: " + charisma);
             Console.WriteLine("Luck: " + luck);
+            Console.WriteLine(goldcoins + " gold coins");
+            Console.WriteLine(silvercoins + " silver coins");
+            Console.WriteLine(coppercoins + " copper coins");
             Console.WriteLine("Your goal is to reach the max level of " + maxlevel + " and defeat the Demon King with your new found powers! To save our world!");
 
             Console.WriteLine(" ");
             Console.WriteLine("Press [Enter] to continue.");
             Console.ReadLine();
+            Console.Clear();
 
-            
-            
+            Console.WriteLine("- Quest Recieved: Defeat the Demon King! - ");
+
+            Console.WriteLine("A bright light blinded you after you were given the quest by the woman. When the light finally cleared you realized you were in the center of a crowd.");
+            Console.WriteLine("You look around and notice that the town was a mix of races: Elves, Humans, Drawfs, and more. The crowd then departs and an Ederly Dragon Born walks inbetween the parted group.");
+            Console.WriteLine("Are you a Hero? Did Goddess Cecilia send you?");
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Choose 1 or 2 for your answer.");
+            Console.WriteLine(" ");
+
+            Console.WriteLine("1. Answer him honestly about what you saw and what she said.");
+            Console.WriteLine("2. A Goddess? Sorry I don't know who you are talking about.");
+
+            char queston1 = Console.ReadKey().KeyChar;
+
+            if (queston1 == '1')
+            {
+                charisma = charisma + 2;
+                karma = karma + 3;
+                Console.WriteLine("Everyone around began cheering for finally the Hero sent by their Goddess Cecilia.");
+                Console.WriteLine("The Elder grabbed your arm happily 'Since you were sent by our goddess we must treat you well!' He handed you a bag of what you presume to be a bag of coins.");
+                Console.WriteLine("'Quickly we must show you to your room! And no worries its on us!' You followed the Elder to the tavern, and was greeted by the woman at the front desk.");
+                Console.WriteLine("'Welcome to the Kraken Tavern, for one room its 2 silver coins!' the elderly walked up to her, 'This young " + race + " is the hero sent by the Goddess! No need to make them pay the fee!'");
+                Console.WriteLine("The woman gased and quickly grabbed a set of keys behind her, 'Room 11 Hero....?' you realized that you haven't given them your name, '" + name + "' she nodded to herself 'Here you go Hero " + name + "!'");
+                Console.WriteLine("You found your room, entered it then layed onto the bed, waiting for the next day to comel.");
+
+                Console.Clear();
+                goldcoins = goldcoins + 1;
+                silvercoins = silvercoins + 2;
+                coppercoins = coppercoins + 3;
+
+                Console.WriteLine("Congradulations! You gained 2 charisma, ")
+            }
+            else if (queston1 == '2')
+            {
+
+            }
+            else
+            {
+
+            }
             
            
 

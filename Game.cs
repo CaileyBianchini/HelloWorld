@@ -18,13 +18,13 @@ namespace HelloWorld
             int bossattacks = 20;
             int specialbossattacks = 30; //minus 5 mana
 
-            int bossmana = 30;
+            float bossmana = 30.0f;
 
                 //big boss
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
 
-            int bigbossmana = 30;
+            float bigbossmana = 30.0f;
                 
             
             //character details
@@ -32,32 +32,48 @@ namespace HelloWorld
                 //health
             float PlayerHealth = 300.0f;
             float EnemyHealth = 200.0f;
-            float PlayerHealthRegen = 20;
+            float PlayerHealthRegen = 20.0f;
             //_________________________________________________________________________________________________
                 //player atacks and such
-            int mana = 50;   //will figure out how to conbine with attack variables
+            float mana = 50.0f;   //will figure out how to conbine with attack variables
             int playersattack = 20;
             int specialattack = 40; //minus 10 mana
             //_________________________________________________________________________________________________
                 //levels
             int level = 0;
+            bool maxlevelreached = false;
             int maxlevel = 100;
-            maxlevel = 120;
-            //maxlevelreached = level == maxlevel;
             
-
-            //Console.Write("Level:" + level + ", Mana:" + mana + ", and Health:" + PlayerHealth + ".");  //To copy and paste
+            //maxlevelreached = level == maxlevel;
 
             //menu
             bool ready = true;
 
-            //fix it where it fixes format
+            //start
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
-            Console.WriteLine("Hello Hero " + name + "! Your starting level is " + level + " and your health right now is " + PlayerHealth + ", your goal is to reach level " + maxlevel + ".");
-            Console.WriteLine("Just for reading this you got a level up!");
+
+            //story
+            Console.WriteLine("~~~~~~~~~~");
+            Console.WriteLine("The world is a violent one. Many creatures live in this world: Humans, Elves, Drawfs, Spirits, and much more. This world use to be quite a peacefull one until the fowl Demons showed up. At first it was random killings, lone merchants traveling in between towns, farmers that where out on their feild.");
+            Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy 'Summoun a Hero and the world shall be saved.' and thus a slimmer of hope was born!");
+            Console.WriteLine("~~~~~~~~~~");
+
+            //
+            Console.WriteLine("You were brought to our world to save us Hero " + name + "!");
+            Console.WriteLine("What type of Hero Class are you: ");
+            string role = Console.ReadLine();
+            Console.WriteLine("     ");
+            Console.WriteLine("-Level Gained-");
             level = level+1;
-            Console.Write("Your current level: " + level);
+            Console.WriteLine("Current level: " + level);
+            Console.WriteLine("Hero role: " + role);
+            Console.WriteLine("Health: " + PlayerHealth);
+            Console.WriteLine("Mana: " + mana);
+            Console.WriteLine("Attack: " + playersattack);
+            Console.WriteLine("Special Attack: " + specialattack);
+            Console.WriteLine("Your goal is to reach the max level of " + maxlevel + " and defeat the Demon King with your new found powers! To save our world!");
+
             
             
            

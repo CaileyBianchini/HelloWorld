@@ -13,25 +13,26 @@ namespace HelloWorld
             //mobs attacks and such
                 //mob
             int mobattacks = 15;
+            float EnemyHealth = 100.0f;
 
                 //boss
             int bossattacks = 20;
             int specialbossattacks = 30; //minus 5 mana
-
+            
             float bossmana = 30.0f;
+            float BossHealth = 150.0f;
 
                 //big boss
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
-
             float bigbossmana = 30.0f;
+            float BigBossHealth;
                 
             
             //character details
 
                 //health
-            float PlayerHealth = 300.0f;
-            float EnemyHealth = 200.0f;
+            float PlayerHealth = 100.0f;
             float PlayerHealthRegen = 20.0f;
             //_________________________________________________________________________________________________
                 //player atacks and such
@@ -43,7 +44,12 @@ namespace HelloWorld
             int level = 0;
             bool maxlevelreached = false;
             int maxlevel = 100;
-            
+            //_________________________________________________________________________________________________
+                //other stats
+            int charisma = 20;
+            float karma = 2.0f;
+
+
             //maxlevelreached = level == maxlevel;
 
                 //menu
@@ -59,9 +65,13 @@ namespace HelloWorld
             Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy was shared, 'Summon a Hero and the world shall be saved.' and thus a slimmer of hope was born!");
             Console.WriteLine("~~~~~~~~~~");
              
+            //this is where the start well starts to make sure to loop
+            //back to here when the player dies and wants to continue.
+
             //start
             Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elfand her eyes had galxies in them. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
             Console.WriteLine("'You were brought to our world to save us Hero " + name + "!'");
+            Console.WriteLine("Make sure you write the full word and all lower case!");
             Console.WriteLine("What type of Hero Class are you: ");
             string role = Console.ReadLine();
             Console.WriteLine("I'm sorry but I can't tell, what race are you?");
@@ -72,24 +82,32 @@ namespace HelloWorld
             Console.WriteLine("     ");
             //telling the users stat
 
-            if (role == "mage")
+            if (role =="mage")
             {
                 PlayerHealth = PlayerHealth - 50;
                 mana = mana + 30;
+                playersattack =playersattack - 10;
+                specialattack = specialattack + 30;
+
+
+            }
+            if (role =="knight")
+            {
+
+            }
+            if (role =="necromancer")
+            {
+                karma = karma - 1;
+                charisma = charisma - 5;
+                PlayerHealth = PlayerHealth - 45;
+                mana = mana + 30;
                 playersattack = playersattack - 10;
-
-
+                specialattack = specialattack + 20;
             }
-            if (role == "knight")
+            if (role =="bard")
             {
-
-            }
-            if (role == "necromancer")
-            {
-
-            }
-            if (role == "bard")
-            {
+                karma = karma + 3;
+                charisma = charisma + 5;
 
             }
 
@@ -100,6 +118,8 @@ namespace HelloWorld
             Console.WriteLine("Mana: " + mana);
             Console.WriteLine("Attack: " + playersattack);
             Console.WriteLine("Special Attack: " + specialattack);
+            Console.WriteLine("Karma: " + karma);
+            Console.WriteLine("Charisma: " + charisma);
             Console.WriteLine("Your goal is to reach the max level of " + maxlevel + " and defeat the Demon King with your new found powers! To save our world!");
             
             

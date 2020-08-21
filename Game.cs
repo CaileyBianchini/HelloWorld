@@ -9,24 +9,28 @@ namespace HelloWorld
         public void Run()
         {
 
+            //tutorial boss
+            int tutorialbosshealth = 
+
 
             //mobs attacks and such
             //mob
-            int mobattacks = 15;
-            float EnemyHealth = 100.0f;
+            int mobattacks = 10;
+            float EnemyHealth = 50.0f;
 
             //boss
             int bossattacks = 20;
             int specialbossattacks = 30; //minus 5 mana
 
             float bossmana = 30.0f;
-            float BossHealth = 150.0f;
+            float BossHealth = 100.0f;
 
             //big boss
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
             float bigbossmana = 30.0f;
-            float BigBossHealth;
+            float bigbossmanaregen = 10.0f;
+            float BigBossHealth = 150.0f;
 
 
             //character details
@@ -37,10 +41,11 @@ namespace HelloWorld
             //_________________________________________________________________________________________________
             //player atacks and such
             float mana = 50.0f;   //will figure out how to conbine with attack variables
+            float managregen = 10.0f;
             int playersattack = 20;
             int specialattack = 40; //minus 10 mana
-                                    //_________________________________________________________________________________________________
-                                    //levels
+            //_________________________________________________________________________________________________
+            //levels
             int level = 0;
             //bool maxlevelreached = false;
             int maxlevel = 100;
@@ -164,6 +169,7 @@ namespace HelloWorld
                 {
                     PlayerHealth = PlayerHealth - 20;
                     mana = mana - 50;
+                    specialattack = specialattack - 40;
                 }
                 if (race == "drawf")
                 {
@@ -261,9 +267,14 @@ namespace HelloWorld
                 }
                 else
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("You ignored The Elder, a terrible mistake on your part. The people around you grew a disdain towards you. The crowd departed and the Elder snarled at you and left.");
                     Console.WriteLine("You were left out in the middle of town all to your lonesome, you had no idea where to go and it seemed that everyone would ignore just as what you did to them.");
+                    Console.WriteLine("As the seconds went by the sky began to darken. It then began to rain, you were drenched in water, you begin to feel sick. Health drops 5 percent.");
+                    PlayerHealth = PlayerHealth * 0.95f;
+                    Console.WriteLine("You look around and find a two story building with a plank on it saying 'Kraken Tavern'. You went inside.");
                     Console.WriteLine("");
+
                 }
 
                 Console.WriteLine("Press [Enter] to continue.");

@@ -66,6 +66,7 @@ namespace HelloWorld
             //menu
             //bool ready = true;
 
+
             while (PlayerHealth >= 0)
             {
 
@@ -85,7 +86,7 @@ namespace HelloWorld
                 Console.Clear();
 
                 //your begining
-                Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elfand her eyes had galxies in them. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
+                Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elf and her eyes had galxies in them. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
                 Console.WriteLine("'You were brought to our world to save us Hero " + name + "!'");
                 Console.WriteLine("  ");
                 Console.WriteLine("Make sure you write the full word and all lower case!");
@@ -227,14 +228,14 @@ namespace HelloWorld
 
                 if (queston1 == '1')
                 {
-                    charisma = charisma + 2;
-                    karma = karma + 3;
+                    charisma = charisma + 3;
+                    karma = karma + 4;
                     Console.WriteLine("Everyone around began cheering for finally the Hero sent by their Goddess Cecilia.");
                     Console.WriteLine("The Elder grabbed your arm happily 'Since you were sent by our goddess we must treat you well!' He handed you a bag of what you presume to be a bag of coins.");
                     Console.WriteLine("'Quickly we must show you to your room! And no worries its on us!' You followed the Elder to the tavern, and was greeted by the woman at the front desk.");
                     Console.WriteLine("'Welcome to the Kraken Tavern, for one room its 2 silver coins!' the elderly walked up to her, 'This young " + race + " is the hero sent by the Goddess! No need to make them pay the fee!'");
                     Console.WriteLine("The woman gased and quickly grabbed a set of keys behind her, 'Room 11 Hero....?' you realized that you haven't given them your name, '" + name + "' she nodded to herself 'Here you go Hero " + name + "!'");
-                    Console.WriteLine("You found your room, entered it then layed onto the bed, waiting for the next day to comel.");
+                    Console.WriteLine("You found your room, entered it then layed onto the bed, waiting for the next day to come.");
 
                     Console.Clear();
                     goldcoins = goldcoins + 1;
@@ -246,21 +247,46 @@ namespace HelloWorld
                 else if (queston1 == '2')
                 {
                     karma = karma - 1;
+                    Console.WriteLine("Everyone around you grew gloomy as you told them 'I do not know who you are talking about.' Even the Elders calm demeanor was shattered in his dissapointment.");
+                    Console.WriteLine("You were quite uncomfortable with their gazes of awe but the gloom in the air is even much more unnerving. 'Do you have a place to stay?' you asked the Elder.");
+                    Console.WriteLine("'We do.' He answered shortly. He pointed towards a tavern that seemed to have a second level. Perhaps the main floor was similar to a pub and the other floor may be a hotel. You bowed to the Elder and with a polite tone 'Thank you.'");
+                    Console.WriteLine("You walked in. You were greeted by a woman at the front desk 'Welcome to the Kraken Tavern, for one room its 2 silver coins!' You walked up to her and handed her the 2 silver coins. 'Here you go! Room 11! May I know your name so I can put it in the Log Book!'");
+                    silvercoins = silvercoins - 2;
+                    Console.WriteLine("'" + name + "'");
+                    Console.WriteLine("You found your room, entered it and then layed onto the bed, wating for the next day to come.");
+
+                    Console.Clear();
+                    Console.WriteLine("It's a sad day, you were taken to a world you do not know of, you had already used 2 silver coins and lost 2 karma points. Hopefully tommorrow would be better than it was today.");
 
                 }
                 else
                 {
-
+                    Console.WriteLine("You ignored The Elder, a terrible mistake on your part. The people around you grew a disdain towards you. The crowd departed and the Elder snarled at you and left.");
+                    Console.WriteLine("You were left out in the middle of town all to your lonesome, you had no idea where to go and it seemed that everyone would ignore just as what you did to them.");
+                    Console.WriteLine("");
                 }
 
                 Console.WriteLine("Press [Enter] to continue.");
                 Console.ReadLine();
                 Console.Clear();
 
+
+
+
+
+
+
+
+
+
+
+
+
             }
 
             Console.WriteLine("G A M E   O V E R.");
-            Console.WriteLine("You Died.")
+            Console.WriteLine("You Died.");
         }
     }
+}
 

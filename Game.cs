@@ -92,7 +92,7 @@ namespace HelloWorld
                 //story
                 Console.WriteLine("~~~~~~~~~~");
                 Console.WriteLine("The world is a violent one. Many creatures live in this world: Humans, Elves, Drawfs, Spirits, and much more. This world use to be quite a peacefull one until the fowl Demons showed up. At first it was random killings, lone merchants traveling in between towns, farmers that where out on their feild.");
-                Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy was shared, 'Summon a Hero and the world shall be saved.' and thus a slimmer of hope was born!");
+                Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy was shared, 'Summon a Hero and the world shall be saved.' and thus a slimmer of hope was born!"); //aparently i misspelled slimmer? How do I spell it then?
                 Console.WriteLine("~~~~~~~~~~");
 
                 //this can be copy and pasted to help out the screen
@@ -430,16 +430,53 @@ namespace HelloWorld
                 Console.ReadLine();
                 Console.Clear();
 
-                //erase when adding more story
-                break;
-                //to be earased
+                
 
+                Console.WriteLine("You've been traing for hours and realized how tired you so you decided to walk back to the tavern.");
+                Console.WriteLine("On your way there you spot an old man sitting on a blanket by an ally way. In front of the old man is a sign that says 'Riddles' so you walk up to him, whats the harm?");
                 
-                
-                
-                
-                
+                for (int i = 0; i < 5; i++)
+                {
+
+                    Console.WriteLine("Hoho, what requires you to break it before you use it?");
+                    string guess1 = Console.ReadLine();
+                    
+
+                    if(guess1 == "egg")
+                    {
+                        Console.WriteLine("Hahaha, yes yes! Your correct! Hahaha!");
+                        Console.WriteLine("You gain 1 charisma, 1 karma and 1 luck!");
+                        luck = luck + 1;
+                        charisma = charisma + 1;
+                        karma = karma + 1;
+                        Console.WriteLine("Press [Enter] to continue.");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The old man laughs at you, 'Hoho so stupid!'");
+                        Console.WriteLine("You obviously got it wrong.");
+                        Console.WriteLine("'Hohoo try again!'");
+                        Console.WriteLine("Press [Enter] to continue.");
+                        Console.ReadLine();
+                        Console.Clear();
+
+                    }
+                    
+                    Console.WriteLine("You have " + (5 - i) + " tries remaining");
+                    Console.WriteLine("Press [Enter] to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                //erase when putting more!! \/
+                break;
+                //erase!! /\
             }
+
+            //End of Game
 
             Console.Clear();
 
@@ -459,12 +496,10 @@ namespace HelloWorld
                 Console.WriteLine("You reached the end of what we have. This is an early version of the game. Thank you for playing!");
             }
 
-            Console.WriteLine("Press [Enter] to continue.");
+            Console.WriteLine("Press [Enter] to End Game.");
             Console.ReadLine();
             Console.Clear();
 
-
-            Console.Clear();
             
         }
     }

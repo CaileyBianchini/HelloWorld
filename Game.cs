@@ -119,15 +119,15 @@ namespace HelloWorld
                 //role
 
                 //soon to be added
-                //ranger
+     
                 //warlock
-                //monk
+               
                 //sorcerer
                 //wizard
-                //barbarian
-                //cleric
+        
+                
                 //druid
-                //fighter
+                
 
                 if (role == "mage")
                 {
@@ -167,6 +167,39 @@ namespace HelloWorld
                     mana = mana + 15;
                     stealth = stealth + 1;
 
+                }
+                if (role == "monk")
+                {
+                    PlayerHealth = PlayerHealth + 30;
+                    playersattack = playersattack + 20;
+                    stealth = stealth + 3;
+                }
+                if (role == "cleric")
+                {
+                    charisma = charisma + 8;
+                    specialattack = specialattack + 15;
+                    karma = karma + 3;
+                }
+                if (role == "fighter")
+                {
+                    playersattack = playersattack + 30;
+                    mana = mana / 2;
+                }
+                if (role == "rogue")
+                {
+                    karma = karma - 2;
+                    specialattack = specialattack + 5;
+                    stealth = stealth + 5;
+                }
+                if (role == "ranger")
+                {
+                    specialattack = specialattack + 3;
+                    stealth = stealth + 5;
+                }
+                if (role == "barbarian")
+                {
+                    PlayerHealth = PlayerHealth + 30;
+                    playersattack = playersattack + 30;
                 }
 
                 //race
@@ -210,6 +243,11 @@ namespace HelloWorld
                 {
                     PlayerHealth = PlayerHealth / 2;
                     stealth = stealth + 6;
+                }
+                if (race == "orc")
+                {
+                    PlayerHealth = PlayerHealth + 40;
+                    playersattack = playersattack + 10;
                 }
 
 

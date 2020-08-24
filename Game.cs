@@ -379,7 +379,7 @@ namespace HelloWorld
                         tutorialbosshealth = tutorialbosshealth - specialattack;
                         mana = mana - 10;
                         manarounds = manarounds + 1;
-                        Console.WriteLine("Congradulation! Enemy has been delt " + specialattack + " damage by special attack!");
+                        Console.WriteLine("Congradulation! You delt " + specialattack + " damage by special attack!");
 
                     }
                     //when figured outy i will implement this!
@@ -464,7 +464,7 @@ namespace HelloWorld
                         Console.Clear();
 
                     }
-                    
+                    i = i + 1;
                     Console.WriteLine("You have " + (5 - i) + " tries remaining");
                     Console.WriteLine("Press [Enter] to continue.");
                     Console.ReadLine();

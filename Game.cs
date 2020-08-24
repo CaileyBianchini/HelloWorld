@@ -8,6 +8,11 @@ namespace HelloWorld
     {
         public void Run()
         {
+            //Cailey Bianchini
+            //Hello World
+            //An text based rpg or a M.U.D
+
+            //I need to have someone fix the grammer and spelling XD
 
             //tutorial boss
             int tutorialbosshealth = 100;
@@ -60,6 +65,7 @@ namespace HelloWorld
             float karma = 2.0f;
             int luck = 5;
             float stealth = 2.0f;
+            int defence = 5;
 
             //_________________________________________________________________________________________________
             //pet
@@ -130,7 +136,7 @@ namespace HelloWorld
                     playersattack = playersattack - 10;
                     specialattack = specialattack + 30;
                     stealth = stealth + 1;
-
+                    defence = defence - 2;
 
                 }
                 if (role == "knight")
@@ -139,6 +145,7 @@ namespace HelloWorld
                     PlayerHealthRegen = PlayerHealthRegen + 10;
                     luck = luck + 5;
                     stealth = stealth - 1;
+                    defence = defence + 10;
                 }
                 if (role == "necromancer")
                 {
@@ -150,6 +157,7 @@ namespace HelloWorld
                     playersattack = playersattack - 10;
                     specialattack = specialattack + 20;
                     stealth = stealth + 3;
+                    defence = defence - 2;
                 }
                 if (role == "bard")
                 {
@@ -176,12 +184,14 @@ namespace HelloWorld
                     PlayerHealth = PlayerHealth - 20;
                     mana = mana - 50;
                     specialattack = specialattack - 40;
+                    defence = defence + 3;
                 }
                 if (race == "drawf")
                 {
                     PlayerHealth = PlayerHealth + 20;
                     playersattack = playersattack + 20;
                     mana -= mana * 0.5f;
+                    defence = defence + 5;
                 }
                 if (race == "elf")
                 {
@@ -193,6 +203,8 @@ namespace HelloWorld
                     PlayerHealthRegen = PlayerHealthRegen + 10;
                     playersattack = playersattack / 2;
                     specialattack = specialattack + 30;
+                    defence = defence - 3;
+
                 }
                 if (race == "halfling")
                 {
@@ -210,6 +222,7 @@ namespace HelloWorld
                 Console.WriteLine("Attack: " + playersattack);
                 Console.WriteLine("Special Attack: " + specialattack);
                 Console.WriteLine("Stealth: " + stealth);
+                //Console.WriteLine("Defence: " + defence);
                 Console.WriteLine("Karma: " + karma);
                 Console.WriteLine("Charisma: " + charisma);
                 Console.WriteLine("Luck: " + luck);
@@ -249,7 +262,10 @@ namespace HelloWorld
                     Console.WriteLine("The woman gased and quickly grabbed a set of keys behind her, 'Room 11 Hero....?' you realized that you haven't given them your name, '" + name + "' she nodded to herself 'Here you go Hero " + name + "!'");
                     Console.WriteLine("You found your room, entered it then layed onto the bed, waiting for the next day to come.");
 
+                    Console.WriteLine("Press [Enter] to continue.");
+                    Console.ReadLine();
                     Console.Clear();
+
                     goldcoins = goldcoins + 1;
                     silvercoins = silvercoins + 2;
                     coppercoins = coppercoins + 3;
@@ -262,12 +278,15 @@ namespace HelloWorld
                     Console.WriteLine("Everyone around you grew gloomy as you told them 'I do not know who you are talking about.' Even the Elders calm demeanor was shattered in his dissapointment.");
                     Console.WriteLine("You were quite uncomfortable with their gazes of awe but the gloom in the air is even much more unnerving. 'Do you have a place to stay?' you asked the Elder.");
                     Console.WriteLine("'We do.' He answered shortly. He pointed towards a tavern that seemed to have a second level. Perhaps the main floor was similar to a pub and the other floor may be a hotel. You bowed to the Elder and with a polite tone 'Thank you.'");
-                    Console.WriteLine("You walked in. You were greeted by a woman at the front desk 'Welcome to the Kraken Tavern, for one room its 2 silver coins!' You walked up to her and handed her the 2 silver coins. 'Here you go! Room 11! May I know your name so I can put it in the Log Book!'");
-                    silvercoins = silvercoins - 2;
+                    Console.WriteLine("You walked in. You were greeted by a woman at the front desk 'Welcome to the Kraken Tavern, for one room its 2 copper coins!' You walked up to her and handed her the 2 silver coins. 'Here you go! Room 11! May I know your name so I can put it in the Log Book!'");
+                    coppercoins = coppercoins - 2;
                     Console.WriteLine("'" + name + "'");
                     Console.WriteLine("You found your room, entered it and then layed onto the bed, wating for the next day to come.");
 
+                    Console.WriteLine("Press [Enter] to continue.");
+                    Console.ReadLine();
                     Console.Clear();
+
                     Console.WriteLine("It's a sad day, you were taken to a world you do not know of, you had already used 2 silver coins and lost 2 karma points. Hopefully tommorrow would be better than it was today.");
 
                 }
@@ -280,7 +299,15 @@ namespace HelloWorld
                     PlayerHealth = PlayerHealth * 0.95f;
                     Console.WriteLine("You look around and find a two story building with a plank on it saying 'Kraken Tavern'. You went inside.");
                     Console.WriteLine("");
+                    Console.WriteLine("The man at the front desk is started by your apperance then smirks. You can tell that gears starts to run in his head. 'Welcome to the Kraken Tavern, its 4 coppers per room!' a rip off but you aren't complaing because of the situation your in.");
+                    Console.WriteLine("He hands you a set of keys, Room 11. You look around for your room. You soon found a door with the matching numbers. Unlocking the door you step inside and shut the door close. You jump into bead absolutly tired.");
 
+                    Console.WriteLine("Press [Enter] to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
+
+                    coppercoins = coppercoins - 4;
+                    Console.WriteLine("You lost 5% of your health and 4 copper coins. Today is just not your day. Hopefully tommorrow is better.");
                 }
 
                 Console.WriteLine("Press [Enter] to continue.");
@@ -317,6 +344,7 @@ namespace HelloWorld
                 Console.WriteLine("Your special attack tends to have high attack damage however if requires 10 mana.");
                 Console.WriteLine("If you try to use your special attack but do not have enough mana you will fail your attack. When you do so depending on the situation the attack can back fire and cause you damage. Not only that but it will skip your turn but the enemy will not wait for you and attacik.");
                 Console.WriteLine("This round the penilties will be minimal. Be careful however! This Dummy attacks!");
+                //Console.WriteLine("If you want you can also defend yourself, but becareful! If you have less defence than the enemies attack then you will take what is left over!");
                 Console.WriteLine("Press [Enter] to continue.");
                 Console.ReadLine();
                 Console.Clear();
@@ -337,7 +365,8 @@ namespace HelloWorld
                     Console.WriteLine("");
                     Console.WriteLine("1. Attack");
                     Console.WriteLine("2. Special Attack");
-                    Console.WriteLine("Enter the number for what attack you want to use!");
+                    //Console.WriteLine("3. Defend");
+                    Console.WriteLine("Enter the number for what you want to use!");
                     string attackchoice = Console.ReadLine();
 
                     if (attackchoice == "1")
@@ -353,6 +382,15 @@ namespace HelloWorld
                         Console.WriteLine("Congradulation! Enemy has been delt " + specialattack + " damage by special attack!");
 
                     }
+                    //when figured outy i will implement this!
+                    //else if (attackchoice == "3")
+                    //{
+                    //    int defendagainstattack = defence - tutorialbossattack;
+                    //    if (defence > tutorialbossattack)
+                    //    {
+                    //        Console.WriteLine("Your defence is higher! You suffered no damade!");
+                    //    }
+                    //}
                     else
                     {
                         Console.WriteLine("You missed!");
@@ -371,6 +409,9 @@ namespace HelloWorld
                         break;
                     }
 
+                    Console.WriteLine("Press [Enter] to continue.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
 
                 if (PlayerHealth < 1)
@@ -393,11 +434,11 @@ namespace HelloWorld
                 break;
                 //to be earased
 
-
-
-
-
-
+                
+                
+                
+                
+                
             }
 
             Console.Clear();

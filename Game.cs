@@ -10,7 +10,8 @@ namespace HelloWorld
         {
 
             //tutorial boss
-            int tutorialbosshealth = 
+            int tutorialbosshealth = 100;
+            int tutorialbossattack = 1;
 
 
             //mobs attacks and such
@@ -29,9 +30,13 @@ namespace HelloWorld
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
             float bigbossmana = 30.0f;
-            float bigbossmanaregen = 10.0f;
             float BigBossHealth = 150.0f;
 
+            //Demon King
+            int demonkinghealth = 300;
+            int demonkingattack = 50;
+            int demonkingspecialattack = 75;
+            int demonkingmana = 40;
 
             //character details
 
@@ -72,12 +77,11 @@ namespace HelloWorld
             //bool ready = true;
 
 
-            while (PlayerHealth >= 0)
+            while (PlayerHealth > 0)
             {
 
                 //start
-                Console.WriteLine("What is your name?");
-                string name = Console.ReadLine();
+                
 
                 //story
                 Console.WriteLine("~~~~~~~~~~");
@@ -92,6 +96,8 @@ namespace HelloWorld
 
                 //your begining
                 Console.WriteLine("You awoke in a bright marble room, standing in front of you a tall and goddess like dark elf and her eyes had galxies in them. There was a halo behing her making her even more goddess like, she gives you small smile and open her arms.");
+                Console.WriteLine("'What is your name Hero?' the woman asks.");
+                string name = Console.ReadLine();
                 Console.WriteLine("'You were brought to our world to save us Hero " + name + "!'");
                 Console.WriteLine("  ");
                 Console.WriteLine("Make sure you write the full word and all lower case!");
@@ -230,9 +236,9 @@ namespace HelloWorld
                 Console.WriteLine("1. Answer him honestly about what you saw and what she said.");
                 Console.WriteLine("2. A Goddess? Sorry I don't know who you are talking about.");
 
-                char queston1 = Console.ReadKey().KeyChar;
+                string queston1 = Console.ReadLine();
 
-                if (queston1 == '1')
+                if (queston1 == "1")
                 {
                     charisma = charisma + 3;
                     karma = karma + 4;
@@ -250,7 +256,7 @@ namespace HelloWorld
 
                     Console.WriteLine("Congradulations! You gained 2 charisma, 3 karma, 1 gold coin, 2 silver coins, and 3 copper coins!");
                 }
-                else if (queston1 == '2')
+                else if (queston1 == "2")
                 {
                     karma = karma - 1;
                     Console.WriteLine("Everyone around you grew gloomy as you told them 'I do not know who you are talking about.' Even the Elders calm demeanor was shattered in his dissapointment.");
@@ -281,12 +287,111 @@ namespace HelloWorld
                 Console.ReadLine();
                 Console.Clear();
 
+                //my tutorial disapeared!!!!
+
+                Console.WriteLine("You awoke in an unfamiliar room, then you remembered what happened yesterday.");
+                Console.WriteLine("You stand up and walk out of your room and head out of the tavern.");
+                Console.WriteLine("Your objective for today is to learn how to attack! Across the street from you, you spot a soldier."); //I swear to god thats how you spell soldier, i am too angrey at my loss of my programing to worry about spelling >:(
+                Console.WriteLine("Walking up to him you asked 'where is the training grounds?'");
+
+                if (queston1 == "1")
+                {
+                    Console.WriteLine("The soldier gives you a bright smile ' Hero " + name + "! Ya came ta ask me! I'm blessed! It's down da road with da grey brick fencing!");
+                    Console.WriteLine("You thank the soldier and follow his instructions.");
+                }
+                else
+                {
+                    Console.WriteLine("The soldier grumbles at you and points down the street, 'It's da grey bik fenced area.'");
+                    Console.WriteLine("You wonder down the street that he pointed to looking out for an obvious training ground with the grey brick fencing around it.");
+                }
+
+                Console.WriteLine("You found the traing area and enter inside. You see a few dummies around, obvious for practice.");
+
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
+
+                Console.WriteLine("It's time for training!");
+                Console.WriteLine("You have two types of attacks, a regular attack and a special attack.");
+                Console.WriteLine("Your regular attack is relitivly low however you do not need mana!");
+                Console.WriteLine("Your special attack tends to have high attack damage however if requires 10 mana.");
+                Console.WriteLine("If you try to use your special attack but do not have enough mana you will fail your attack. When you do so depending on the situation the attack can back fire and cause you damage. Not only that but it will skip your turn but the enemy will not wait for you and attacik.");
+                Console.WriteLine("This round the penilties will be minimal. Be careful however! This Dummy attacks!");
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
+
+                int rounds = 0;
+                int manarounds = 0;
+
+                while (PlayerHealth > 0 && tutorialbosshealth > 0)
+                {
+                    Console.WriteLine("Round: " + rounds);
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Your status:");
+                    Console.WriteLine("Mana left: " + mana);
+                    Console.WriteLine("Health left: " + PlayerHealth);
+                    Console.WriteLine("  ");
+                    Console.WriteLine("Enemy's status: ");
+                    Console.WriteLine("Enemy's health: " + tutorialbosshealth);
+                    Console.WriteLine("");
+                    Console.WriteLine("1. Attack");
+                    Console.WriteLine("2. Special Attack");
+                    Console.WriteLine("Enter the number for what attack you want to use!");
+                    string attackchoice = Console.ReadLine();
+
+                    if (attackchoice == "1")
+                    {
+                        tutorialbosshealth = tutorialbosshealth - playersattack;
+                        Console.WriteLine("Your attack was succeful! Enemy has been dealt " + playersattack + " damage!");
+                    }
+                    else if (attackchoice == "2" && mana > 9)
+                    {
+                        tutorialbosshealth = tutorialbosshealth - specialattack;
+                        mana = mana - 10;
+                        manarounds = manarounds + 1;
+                        Console.WriteLine("Congradulation! Enemy has been delt " + specialattack + " damage by special attack!");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("You missed!");
+                    }
+
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Enimeies Turn!");
+                    Console.WriteLine("");
+                    Console.WriteLine("Enemy delt: " + tutorialbossattack + " damage!");
+                    PlayerHealth = PlayerHealth - tutorialbossattack;
+
+
+                    rounds = rounds + 1;
+                    if (PlayerHealth < 1)
+                    {
+                        break;
+                    }
+
+                }
+
+                if (PlayerHealth < 1)
+                {
+                    break;
+                }
+
+                Console.WriteLine("This time around you will get your health back to the way it was however next time you will need to rely on your Health Regen!");
+                mana = mana + (managregen * manarounds);
+                PlayerHealth = PlayerHealth + (tutorialbossattack * rounds);
+                
 
 
 
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
 
-
-
+                //erase when adding more story
+                break;
+                //to be earased
 
 
 
@@ -295,8 +400,31 @@ namespace HelloWorld
 
             }
 
-            Console.WriteLine("G A M E   O V E R.");
-            Console.WriteLine("You Died.");
+            Console.Clear();
+
+            if (PlayerHealth < 1)
+            {
+                Console.WriteLine("G A M E   O V E R.");
+                Console.WriteLine("You Died.");
+            }
+            else if (demonkinghealth < 1)
+            {
+                Console.WriteLine("Congradulations! You defeated the Demon King! ");
+                //blah blah blah more dialogue
+            }
+            else
+            {
+                Console.WriteLine("Version 0.0.1");
+                Console.WriteLine("You reached the end of what we have. This is an early version of the game. Thank you for playing!");
+            }
+
+            Console.WriteLine("Press [Enter] to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+
+            Console.Clear();
+            
         }
     }
 }

@@ -237,6 +237,13 @@ namespace HelloWorld
                 Console.Clear();
 
                 Console.WriteLine("- Quest Recieved: Defeat the Demon King! - ");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("- D A Y  O N E -");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
 
                 Console.WriteLine("A bright light blinded you after you were given the quest by the woman. When the light finally cleared you realized you were in the center of a crowd.");
                 Console.WriteLine("You look around and notice that the town was a mix of races: Elves, Humans, Drawfs, and more. The crowd then departs and an Ederly Dragon Born walks inbetween the parted group.");
@@ -310,11 +317,21 @@ namespace HelloWorld
                     Console.WriteLine("You lost 5% of your health and 4 copper coins. Today is just not your day. Hopefully tommorrow is better.");
                 }
 
+                Console.WriteLine("- E N D  O F  D A Y  O N E -");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+
                 Console.WriteLine("Press [Enter] to continue.");
                 Console.ReadLine();
                 Console.Clear();
 
                 //my tutorial disapeared!!!!
+
+                Console.WriteLine("- D A Y  T W O -");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
 
                 Console.WriteLine("You awoke in an unfamiliar room, then you remembered what happened yesterday.");
                 Console.WriteLine("You stand up and walk out of your room and head out of the tavern.");
@@ -512,6 +529,15 @@ namespace HelloWorld
 
                 Console.WriteLine("After your meal you had to your room. You were tired from all that hard work you did during the day that as soon as you layed onto the bed you fell fast asleep.");
 
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("- E N D  O F  D A Y  T W O -");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+
+
                 Console.WriteLine("Press [Enter] to continue.");
                 Console.ReadLine();
                 Console.Clear();
@@ -520,6 +546,8 @@ namespace HelloWorld
                 break;
                 //erase!! /\
             }
+
+
 
             //End of Game
 

@@ -33,6 +33,50 @@ namespace HelloWorld
             Console.WriteLine(coppercoins + " copper coins");
         }
 
+        void AttackChoices(int rounds, float mana, float PlayerHealth, int enemyhealth, int playersattack, int specialattack, float manarounds)
+        {
+            Console.WriteLine("Round: " + rounds);
+            Console.WriteLine(" ");
+            Console.WriteLine("Your status:");
+            Console.WriteLine("Mana left: " + mana);
+            Console.WriteLine("Health left: " + PlayerHealth);
+            Console.WriteLine("  ");
+            Console.WriteLine("Enemy's status: ");
+            Console.WriteLine("Enemy's health: " + enemyhealth);
+            Console.WriteLine("");
+            Console.WriteLine("1. Attack");
+            Console.WriteLine("2. Special Attack");
+            //Console.WriteLine("3. Defend");
+            Console.WriteLine("Enter the number for what you want to use!");
+            string attackchoice = Console.ReadLine();
+
+            if (attackchoice == "1")
+            {
+                enemyhealth = enemyhealth - playersattack;
+                Console.WriteLine("Your attack was succeful! Enemy has been dealt " + playersattack + " damage!");
+            }
+            else if (attackchoice == "2" && mana > 9)
+            {
+                enemyhealth = enemyhealth - specialattack;
+                mana = mana - 10;
+                manarounds = manarounds + 1;
+                Console.WriteLine("Congradulation! You delt " + specialattack + " damage by special attack!");
+
+            }
+            //when figured outy i will implement this!
+            //else if (attackchoice == "3")
+            //{
+            //    int defendagainstattack = defence - tutorialbossattack;
+            //    if (defence > tutorialbossattack)
+            //    {
+            //        Console.WriteLine("Your defence is higher! You suffered no damade!");
+            //    }
+            //}
+            else
+            {
+                Console.WriteLine("You missed!");
+            }
+        }
 
 
         public void Run()
@@ -43,33 +87,33 @@ namespace HelloWorld
 
             //I need to have someone fix the grammer and spelling XD
 
-            
-            
 
 
+
+            int enemyhealth = 100;
 
             //tutorial boss
-            int tutorialbosshealth = 100;
+            
             int tutorialbossattack = 1;
 
 
             //mobs attacks and such
             //mob
             int mobattacks = 10;
-            float EnemyHealth = 50.0f;
+            
 
             //boss
             int bossattacks = 20;
             int specialbossattacks = 30; //minus 5 mana
 
             float bossmana = 30.0f;
-            float BossHealth = 100.0f;
+            
 
             //big boss
             int bigbossattck = 30;
             int specialbigbossattck = 50; //minus 10
             float bigbossmana = 30.0f;
-            float BigBossHealth = 150.0f;
+            
 
             //Demon King
             int demonkinghealth = 300;
@@ -396,6 +440,12 @@ namespace HelloWorld
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
+                Console.WriteLine("Stats");
+                PrintStats(level, charisma, karma, luck, stealth, defence, mana, playersattack, specialattack, goldcoins, silvercoins, coppercoins, name, role, race, PlayerHealth);
+
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
 
                 Console.WriteLine("You awoke in an unfamiliar room, then you remembered what happened yesterday.");
                 Console.WriteLine("You stand up and walk out of your room and head out of the tavern.");
@@ -433,50 +483,9 @@ namespace HelloWorld
                 int rounds = 0;
                 float manarounds = 0.0f;
 
-                while (PlayerHealth > 0 && tutorialbosshealth > 0)
+                while (PlayerHealth > 0 && enemyhealth > 0)
                 {
-                    Console.WriteLine("Round: " + rounds);
-                    Console.WriteLine(" ");
-                    Console.WriteLine("Your status:");
-                    Console.WriteLine("Mana left: " + mana);
-                    Console.WriteLine("Health left: " + PlayerHealth);
-                    Console.WriteLine("  ");
-                    Console.WriteLine("Enemy's status: ");
-                    Console.WriteLine("Enemy's health: " + tutorialbosshealth);
-                    Console.WriteLine("");
-                    Console.WriteLine("1. Attack");
-                    Console.WriteLine("2. Special Attack");
-                    //Console.WriteLine("3. Defend");
-                    Console.WriteLine("Enter the number for what you want to use!");
-                    string attackchoice = Console.ReadLine();
-
-                    if (attackchoice == "1")
-                    {
-                        tutorialbosshealth = tutorialbosshealth - playersattack;
-                        Console.WriteLine("Your attack was succeful! Enemy has been dealt " + playersattack + " damage!");
-                    }
-                    else if (attackchoice == "2" && mana > 9)
-                    {
-                        tutorialbosshealth = tutorialbosshealth - specialattack;
-                        mana = mana - 10;
-                        manarounds = manarounds + 1;
-                        Console.WriteLine("Congradulation! You delt " + specialattack + " damage by special attack!");
-
-                    }
-                    //when figured outy i will implement this!
-                    //else if (attackchoice == "3")
-                    //{
-                    //    int defendagainstattack = defence - tutorialbossattack;
-                    //    if (defence > tutorialbossattack)
-                    //    {
-                    //        Console.WriteLine("Your defence is higher! You suffered no damade!");
-                    //    }
-                    //}
-                    else
-                    {
-                        Console.WriteLine("You missed!");
-                    }
-
+                    AttackChoices(rounds, mana, PlayerHealth, enemyhealth, playersattack, specialattack, manarounds);
                     Console.WriteLine(" ");
                     Console.WriteLine("Enimeies Turn!");
                     Console.WriteLine("");
@@ -501,7 +510,7 @@ namespace HelloWorld
                 }
 
                 Console.WriteLine("This time around you will get your health back to the way it was however next time you will need to rely on your Health Regen!");
-                mana = mana + (managregen * manarounds);
+                mana = mana + (manaregen * manarounds);
                 PlayerHealth = PlayerHealth + (tutorialbossattack * rounds);
                 
 

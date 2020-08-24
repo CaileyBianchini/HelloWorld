@@ -6,6 +6,35 @@ namespace HelloWorld
 {
     class Game
     {
+    
+
+        //void AfterAttack(int mana, float manaregen, float PlayerHealth, int tutorialbossattack, int rounds, float manarounds)
+        //{
+        //    mana = mana + (manaregen * manarounds);
+        //    PlayerHealth = PlayerHealth + (tutorialbossattack * rounds);
+        //}
+
+        void PrintStats(int level, int charisma, float karma, int luck, float stealth, int defence, float mana, int playersattack, int specialattack, int goldcoins, int silvercoins, int coppercoins, string name, string role, string race, float PlayerHealth)
+        {
+            Console.WriteLine("Current level: " + level);
+            Console.WriteLine("Hero role: " + role);
+            Console.WriteLine("Race : " + race);
+            Console.WriteLine("Health: " + PlayerHealth);
+            Console.WriteLine("Mana: " + mana);
+            Console.WriteLine("Attack: " + playersattack);
+            Console.WriteLine("Special Attack: " + specialattack);
+            Console.WriteLine("Stealth: " + stealth);
+            //Console.WriteLine("Defence: " + defence);
+            Console.WriteLine("Karma: " + karma);
+            Console.WriteLine("Charisma: " + charisma);
+            Console.WriteLine("Luck: " + luck);
+            Console.WriteLine(goldcoins + " gold coins");
+            Console.WriteLine(silvercoins + " silver coins");
+            Console.WriteLine(coppercoins + " copper coins");
+        }
+
+
+
         public void Run()
         {
             //Cailey Bianchini
@@ -13,6 +42,11 @@ namespace HelloWorld
             //An text based rpg or a M.U.D
 
             //I need to have someone fix the grammer and spelling XD
+
+            
+            
+
+
 
             //tutorial boss
             int tutorialbosshealth = 100;
@@ -45,13 +79,13 @@ namespace HelloWorld
 
             //character details
 
-            //health
+            //health 
             float PlayerHealth = 100.0f;
             float PlayerHealthRegen = 20.0f;
             //_________________________________________________________________________________________________
             //player atacks and such
             float mana = 50.0f;   //will figure out how to conbine with attack variables
-            float managregen = 10.0f;
+            float manaregen = 10.0f;
             int playersattack = 20;
             int specialattack = 40; //minus 10 mana
             //_________________________________________________________________________________________________
@@ -201,6 +235,13 @@ namespace HelloWorld
                     PlayerHealth = PlayerHealth + 30;
                     playersattack = playersattack + 30;
                 }
+                if (role == "druid")
+                {
+                    charisma = charisma + 5;
+                    karma = karma + 2;
+                    mana = mana + 10;
+                    luck = luck + 2;
+                }
 
                 //race
 
@@ -250,23 +291,8 @@ namespace HelloWorld
                     playersattack = playersattack + 10;
                 }
 
-
-
-                Console.WriteLine("Current level: " + level);
-                Console.WriteLine("Hero role: " + role);
-                Console.WriteLine("Race : " + race);
-                Console.WriteLine("Health: " + PlayerHealth);
-                Console.WriteLine("Mana: " + mana);
-                Console.WriteLine("Attack: " + playersattack);
-                Console.WriteLine("Special Attack: " + specialattack);
-                Console.WriteLine("Stealth: " + stealth);
-                //Console.WriteLine("Defence: " + defence);
-                Console.WriteLine("Karma: " + karma);
-                Console.WriteLine("Charisma: " + charisma);
-                Console.WriteLine("Luck: " + luck);
-                Console.WriteLine(goldcoins + " gold coins");
-                Console.WriteLine(silvercoins + " silver coins");
-                Console.WriteLine(coppercoins + " copper coins");
+                //stats
+                PrintStats(level,charisma,karma,luck,stealth,defence,mana,playersattack,specialattack,goldcoins,silvercoins,coppercoins,name,role,race,PlayerHealth);
                 Console.WriteLine("Your goal is to reach the max level of " + maxlevel + " and defeat the Demon King with your new found powers! To save our world!");
 
                 Console.WriteLine(" ");
@@ -405,7 +431,7 @@ namespace HelloWorld
                 Console.Clear();
 
                 int rounds = 0;
-                int manarounds = 0;
+                float manarounds = 0.0f;
 
                 while (PlayerHealth > 0 && tutorialbosshealth > 0)
                 {
@@ -477,7 +503,7 @@ namespace HelloWorld
                 Console.WriteLine("This time around you will get your health back to the way it was however next time you will need to rely on your Health Regen!");
                 mana = mana + (managregen * manarounds);
                 PlayerHealth = PlayerHealth + (tutorialbossattack * rounds);
-
+                
 
                 Console.WriteLine("Press [Enter] to continue.");
                 Console.ReadLine();

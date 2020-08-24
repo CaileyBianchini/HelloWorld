@@ -422,8 +422,6 @@ namespace HelloWorld
                 Console.WriteLine("This time around you will get your health back to the way it was however next time you will need to rely on your Health Regen!");
                 mana = mana + (managregen * manarounds);
                 PlayerHealth = PlayerHealth + (tutorialbossattack * rounds);
-                
-
 
 
                 Console.WriteLine("Press [Enter] to continue.");
@@ -470,6 +468,53 @@ namespace HelloWorld
                     Console.ReadLine();
                     Console.Clear();
                 }
+
+                Console.WriteLine("You had fun playing the riddle game but you really needed to head back, the sun was about to set. You waved the man goodbye and left.");
+                
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
+
+                Console.WriteLine("You arived back at the Kraken Tavern. Your stomach rumbles. The Tavern does have food, so you decided to enter the tavern section and walked up to a table and sat down.");
+                Console.WriteLine("A watress walks up to you with a business smile and tells you what they have on  the menu and its prices.");
+                Console.WriteLine("1. Stew with bread - 1 copper");
+                Console.WriteLine("2. Roast Pork - 3 copper");
+                Console.WriteLine("3. Lasana and apple pie - 5 copper");
+                Console.WriteLine("You have " + coppercoins + " copper coins!");
+
+                string menuchoice1 = Console.ReadLine();
+
+                if (menuchoice1 == "1" && coppercoins > 0)
+                {
+                    Console.WriteLine("They stew and bread filled your stomach, although the taste wasn't exceptional the warmth of the meal made you feel good.");
+                    Console.WriteLine("Great job! You didn't loose any health!");
+                    coppercoins = coppercoins - 1;
+                }
+                else if (menuchoice1 == "2" && coppercoins > 2)
+                {
+                    Console.WriteLine("The roast was delicious, the sauce might be what made it taste so good! This is exactly what you needed!");
+                    PlayerHealth = PlayerHealth + 2;
+                    Console.WriteLine("You gained 2 health points!");
+                    coppercoins = coppercoins - 3;
+                }
+                else if (menuchoice1 == "3" && coppercoins > 4)
+                {
+                    Console.WriteLine("The Lasana and Apple Pie was amazing! It was exactly whay you needed! It made you quite full, you won't be needed to get any snacks later!");
+                    coppercoins = coppercoins - 5;
+                    Console.WriteLine("You gained 5 health points!");
+                    PlayerHealth = PlayerHealth + 5;
+                } 
+                else
+                {
+                    Console.WriteLine("You end up choosing just water but that did not end your hunger. You lost 2 health points!");
+                    PlayerHealth = PlayerHealth - 2;
+                }
+
+                Console.WriteLine("After your meal you had to your room. You were tired from all that hard work you did during the day that as soon as you layed onto the bed you fell fast asleep.");
+
+                Console.WriteLine("Press [Enter] to continue.");
+                Console.ReadLine();
+                Console.Clear();
 
                 //erase when putting more!! \/
                 break;

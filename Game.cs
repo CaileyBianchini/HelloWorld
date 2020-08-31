@@ -168,8 +168,8 @@ namespace HelloWorld
 
                 //story
                 Console.WriteLine("~~~~~~~~~~");
-                Console.WriteLine("The world is a violent one. Many creatures live in this world: Humans, Elves, Drawfs, Spirits, and much more. This world use to be quite a peacefull one until the fowl Demons showed up. At first it was random killings, lone merchants traveling in between towns, farmers that where out on their feild.");
-                Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causualties worsened. We were losing hope. That was until a profacy was shared, 'Summon a Hero and the world shall be saved.' and thus a slimmer of hope was born!"); //aparently i misspelled slimmer? How do I spell it then?
+                Console.WriteLine("The world is a violent one. Many creatures live in this world: Humans, Elves, Dwarfs, Spirits, and much more. This world use to be quite a peaceful one until the fowl Demons showed up. At first it was random killings, lone merchants traveling in between towns, farmers that where out on their feild.");
+                Console.WriteLine("Everything changed when the Demon King appeared. They're random attacks became organized, the damage done tripled, and the causalties worsened. We were losing hope. That was until a prophecy was shared, 'Summon a Hero and the world shall be saved.' and thus a sliver of hope was born!"); //aparently i misspelled slimmer? How do I spell it then?
                 Console.WriteLine("~~~~~~~~~~");
 
                 //this can be copy and pasted to help out the screen

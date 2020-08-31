@@ -78,7 +78,6 @@ namespace HelloWorld
             }
         }
 
-
         public void Run()
         {
             //Cailey Bianchini
@@ -508,7 +507,7 @@ namespace HelloWorld
                 {
                     break;
                 }
-                if (enemyhealth < 1)
+                else if (enemyhealth < 1)
                 {
                     Console.WriteLine("- 1 Level Gained -");
                     level = level + 1;

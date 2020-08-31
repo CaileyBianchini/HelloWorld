@@ -82,7 +82,6 @@ namespace HelloWorld
         public void Run()
         {
             //Cailey Bianchini
-            //8/24/2020
             //Hello World
             //An text based rpg or a M.U.D
 
@@ -509,6 +508,11 @@ namespace HelloWorld
                 {
                     break;
                 }
+                if (enemyhealth < 1)
+                {
+                    Console.WriteLine("- 1 Level Gained -");
+                    level = level + 1;
+                }
 
                 Console.WriteLine("This time around you will get your health back to the way it was however next time you will need to rely on your Health Regen!");
                 mana = mana + (manaregen * manarounds);
@@ -610,6 +614,8 @@ namespace HelloWorld
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
+                Console.WriteLine("Your new stats!");
+                PrintStats(level, charisma, karma, luck, stealth, defence, mana, playersattack, specialattack, goldcoins, silvercoins, coppercoins, name, role, race, PlayerHealth);
 
 
                 Console.WriteLine("Press [Enter] to continue.");
@@ -619,6 +625,25 @@ namespace HelloWorld
                 //erase when putting more!! \/
                 break;
                 //erase!! /\
+
+
+                //what should i do next? I mean in story wise? theres just sooooo much that i can do :"(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
 
 
